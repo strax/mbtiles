@@ -1,4 +1,4 @@
-# MBTiles
+# MBTiles [![Build Status](https://travis-ci.org/strax/mbtiles.png)](https://travis-ci.org/strax/mbtiles)
 
 Utilities for accessing and extracting MBTiles tilesets.
 
