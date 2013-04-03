@@ -1,6 +1,6 @@
-# Mbtiles
+# MBTiles
 
-TODO: Write a gem description
+Utilities for accessing and extracting MBTiles tilesets.
 
 ## Installation
 
