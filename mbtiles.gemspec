@@ -5,11 +5,11 @@ require 'mbtiles/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "mbtiles"
-  spec.version       = Mbtiles::VERSION
+  spec.version       = MBTiles::VERSION
   spec.authors       = ["Sami Kukkonen"]
   spec.email         = ["sami.matias.kukkonen@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{MBTiles utilities}
+  spec.summary       = %q{MBTiles utilities}
   spec.homepage      = ""
   spec.license       = "MIT"
 
@@ -18,6 +18,16 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
+  spec.add_dependency "sequel"
+  spec.add_dependency "activesupport"
+  spec.add_dependency "sqlite3"
+
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"
+  spec.add_development_dependency "simplecov"
+  spec.add_development_dependency "rspec"
+  spec.add_development_dependency "guard"
+  spec.add_development_dependency "guard-rspec"
+  spec.add_development_dependency "rb-fsevent", "~> 0.9"
+  spec.add_development_dependency "fuubar"
 end

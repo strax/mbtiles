@@ -1,5 +1,8 @@
-require "mbtiles/version"
+require "active_support"
+require "active_support/core_ext"
 
-module Mbtiles
-  # Your code goes here...
+require "mbtiles/version"
+require "mbtiles/tileset"
+
+module MBTiles
 end
