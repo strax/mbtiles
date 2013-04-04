@@ -1,12 +1,26 @@
 require "sequel"
 
 class MBTiles::Tileset
+  REQUIRED_METADATA_KEYS = [:name, :type, :version, :description, :format]
+
+  REQUIRED_METADATA_KEYS.each do |key|
+    define_method(key) { metadata[key] }
+  end
+
   def initialize(path)
     @path = path.is_a?(Pathname) ? path : Pathname.new(path.to_s)
   end
 
   def metadata
     database[:metadata].to_hash(:name, :value).symbolize_keys
+  end
+
+  def tiles
+    database[:tiles].select(:zoom_level => :z, :tile_column => :x, :tile_row => :y, :tile_data => :data)
+  end
+
+  def tile_at(x, y, z)
+    tiles.where(x: x, y: y, z: z).first
   end
 
   def load!
