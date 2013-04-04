@@ -30,4 +30,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "guard-rspec"
   spec.add_development_dependency "rb-fsevent", "~> 0.9"
   spec.add_development_dependency "fuubar"
+  spec.add_development_dependency "coveralls"
 end
