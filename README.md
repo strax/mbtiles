@@ -1,6 +1,6 @@
 # MBTiles [![Build Status](https://travis-ci.org/strax/mbtiles.png)](https://travis-ci.org/strax/mbtiles) [![Code Climate](https://codeclimate.com/github/strax/mbtiles.png)](https://codeclimate.com/github/strax/mbtiles)
 
-Utilities for accessing and extracting MBTiles tilesets.
+Utilities for [MBTiles](https://github.com/mapbox/mbtiles-spec) tilesets.
 
 ## Installation
 
@@ -18,7 +18,21 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require "mbtiles"
+tileset = MBTiles::Tileset.new("path_to_tileset.mbtiles")
+
+# Access metadata as a Hash
+tileset.metadata[:version]
+# or using a shorthand syntax
+tileset.version
+# Enumerate through tiles
+tileset.tiles.each do |tile|
+  # Do something with tile
+end
+# or access a specific tile (e.g. for rendering)
+tileset.tile_at(x, y, z)
+```
 
 ## Contributing
 
