@@ -12,7 +12,7 @@ class MBTiles::Tileset
   end
 
   def metadata
-    database[:metadata].to_hash(:name, :value).symbolize_keys
+    @metadata ||= database[:metadata].to_hash(:name, :value).symbolize_keys
   end
 
   def tiles
